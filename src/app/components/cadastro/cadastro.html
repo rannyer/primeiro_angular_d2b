@@ -1,0 +1,12 @@
+<div class="cadastro">
+  <input type="text" placeholder="Nome completo" [name]="preco()"  />
+  <input type="email" placeholder="E-mail" name="email"  />
+  <input type="password" placeholder="Senha" name="senha" minlength="6"  />
+  <input type="date" name="dataNascimento" />
+  <button type="button">Cadastrar</button>
+</div>
+
+
+<strong>R$ {{ preco() }}</strong>
+
+<small>Com desconto: R$ {{ comDesconto() }}</small>

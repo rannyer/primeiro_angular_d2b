@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Cabecalho } from './components/cabecalho/cabecalho';
 import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
+import { Cadastro } from './components/cadastro/cadastro';
 
 
 @Component({
-  imports: [RouterOutlet,FormsModule, Cabecalho],
+  imports: [RouterOutlet, FormsModule, Cabecalho, Cadastro],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
