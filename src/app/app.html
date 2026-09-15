@@ -1,17 +1,9 @@
+<app-cabecalho></app-cabecalho>
+
 <h1 >Ola, {{ nome }}!</h1>
-<app-container></app-container>
 
+<input type="text" [(ngModel)]="nome" />
 
-<video></video>
-
-@for (p of pessoas; track $index) {
-  <app-card
-    index={$index}
-    [nome]="p.nome"
-    [idade]="p.idade"
-    [pais]="p.pais"
-  />
-}
-
-
-
+// criar um componente chamado cadastro
+// 4 inputs e botao
+// ao clicar no botao, ele mostra um alerta com os valores cadastrados

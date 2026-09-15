@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Container } from './components/container/container';
-import { Card } from './components/card/card';
+import { Cabecalho } from './components/cabecalho/cabecalho';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
+
 
 @Component({
-  imports: [RouterOutlet, Container, Card],
+  imports: [RouterOutlet,FormsModule, Cabecalho],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -20,7 +22,7 @@ export class App {
   ]
 
   mostrar(){
-    this.imagem = "123"
+    alert("Ola, " + this.nome + "!")
   }
   oi(){
     return "Oiii"
