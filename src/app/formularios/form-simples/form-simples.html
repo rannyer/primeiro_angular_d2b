@@ -1,0 +1,17 @@
+<h2>Cadastro de produtos</h2>
+
+<div class="formulario">
+    <input type="text" placeholder="Nome do produto" [(ngModel)]="produto.nome">
+    <select [(ngModel)]="produto.categoria">
+        <option value="">Selecione a categoria</option>
+        <option value="informatica">Informática</option>
+        <option value="moveis">Móveis</option>
+        <option value="eletrodomesticos">Eletrodomésticos</option>
+    </select>
+    <input type="number" placeholder="Preço do produto" [(ngModel)]="produto.preco">
+    <label>
+        <input type="checkbox" [(ngModel)]="produto.disponivel">
+        Disponível
+    </label>
+    <button (click)="cadastar()">Cadastrar</button>
+</div>

@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="salvar()">
+    <input formControlName="nome" placeholder="Nome">
+    @if(form.get('nome')?.touched && form.get('nome')?.invalid){
+        <p class="erro">ERRO</p>
+    }
+    <input formControlName="preco" placeholder="Preço">
+     <select formControlName="categoria">
+        <option value="">Escolha um valor</option>
+       @for (item of listaCategorias; track $index) {
+        <option [value]="item">{{item}}</option>
+       }
+    </select>
+     <label>
+        <input type="checkbox" formControlName="disponivel">
+        Disponível
+    </label>
+    
+    <button type="submit" [disabled]="form.invalid">Salvar</button>
+</form>

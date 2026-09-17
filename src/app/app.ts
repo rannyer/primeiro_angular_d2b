@@ -1,33 +1,54 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Cabecalho } from './components/cabecalho/cabecalho';
-import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
-import { Cadastro } from './components/cadastro/cadastro';
-import { ListaTarefas } from './components/lista-tarefas/lista-tarefas';
+import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { FormSimples } from './formularios/form-simples/form-simples';
+import { FormComNgform } from './formularios/form-com-ngform/form-com-ngform';
+import { FormComSignal } from './formularios/form-com-signal/form-com-signal';
 
+interface Planta {
+  id: number;
+  nome: string;
+  nomeCientifico: string;
+  preco: number;
+  imagem: string;
+  descricao: string;
+  nivelCuidado: 'fácil' | 'médio' | 'difícil';
+}
 
 @Component({
-  imports: [RouterOutlet, FormsModule, Cabecalho, Cadastro, ListaTarefas],
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [CurrencyPipe, FormSimples, FormComNgform, FormComSignal],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('projeto01');
-  nome = "Seu zé"
-  imagem = "https://images.unsplash.com/photo-1682685794700-1e7f5c3d8b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-  pessoas = [
-    { nome: "João", idade: 25, pais: "Brasil" },
-    { nome: "Maria", idade: 30, pais: "Portugal" },
-    { nome: "El Pedro", idade: 28, pais: "Espanha" }
-  ]
-
-  mostrar(){
-    alert("Ola, " + this.nome + "!")
-  }
-  oi(){
-    return "Oiii"
-  }
-  
+  plantas: Planta[] = [
+    {
+      id: 1,
+      nome: 'Monstera Deliciosa',
+      nomeCientifico: 'Monstera deliciosa',
+      preco: 89.9,
+      imagem: 'assets/plant1.jpg',
+      descricao: 'Folhas grandes e marcantes que iluminam qualquer canto da casa.',
+      nivelCuidado: 'fácil',
+    },
+    {
+      id: 2,
+      nome: 'Zamioculca',
+      nomeCientifico: 'Zamioculcas zamiifolia',
+      preco: 74.5,
+      imagem: 'assets/plant2.jpg',
+      descricao: 'Resiste bem à rotina e traz um verde exuberante com pouco esforço.',
+      nivelCuidado: 'médio',
+    },
+    {
+      id: 3,
+      nome: 'Espada-de-São-Jorge',
+      nomeCientifico: 'Sansevieria trifasciata',
+      preco: 99.0,
+      imagem: 'assets/plant3.jpg',
+      descricao: 'Perfeita para ambientes com pouca luz e manutenção bem simples.',
+      nivelCuidado: 'fácil',
+    },
+  ];
 }

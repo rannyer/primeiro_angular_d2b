@@ -1,0 +1,22 @@
+<h2> Cadastro</h2>
+<form [formRoot]="produtoForm" (submit)="salvar()" >
+     <input [formField]="produtoForm.nome" placeholder="Nome">
+    <br>
+     
+     <input [formField]="produtoForm.preco" type="number" placeholder="Preco">
+    <br>
+
+     <select [formField]="produtoForm.categoria">
+        <option value="">Selecione a categoria</option>
+        <option value="informatica">Informática</option>
+        <option value="moveis">Móveis</option>
+        <option value="eletrodomesticos">Eletrodomésticos</option>
+    </select>
+    <br>
+    <label>
+        <input [formField]="produtoForm.disponivel" type="checkbox">
+        Disponivel
+    </label>
+    <button [disabled]="produtoForm().invalid()" >Salvar</button>
+
+</form>
