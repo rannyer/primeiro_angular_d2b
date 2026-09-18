@@ -3,6 +3,9 @@ import { CurrencyPipe } from '@angular/common';
 import { FormSimples } from './formularios/form-simples/form-simples';
 import { FormComNgform } from './formularios/form-com-ngform/form-com-ngform';
 import { FormComSignal } from './formularios/form-com-signal/form-com-signal';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Rodape } from './components/rodape/rodape';
+import { Cabecalho } from './components/cabecalho/cabecalho';
 
 interface Planta {
   id: number;
@@ -17,7 +20,17 @@ interface Planta {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CurrencyPipe, FormSimples, FormComNgform, FormComSignal],
+  imports: [
+    CurrencyPipe,
+    FormSimples,
+    FormComNgform,
+    FormComSignal,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    Rodape,
+    Cabecalho
+],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
